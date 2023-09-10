@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UplersTodo", "UplersTodo\UplersTodo.csproj", "{376D2DCF-F05E-4703-9D6E-4ED1C1429EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UplersTodo", "UplersTodo\UplersTodo.csproj", "{376D2DCF-F05E-4703-9D6E-4ED1C1429EE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessData", "BusinessData\BusinessData.csproj", "{C6637B80-0E59-427A-9799-EC1114FF8F90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessData", "BusinessData\BusinessData.csproj", "{C6637B80-0E59-427A-9799-EC1114FF8F90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessEntities", "BusinessEntities\BusinessEntities.csproj", "{730A0B64-E653-47D6-AEF9-40FAE4D32FEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessEntities", "BusinessEntities\BusinessEntities.csproj", "{730A0B64-E653-47D6-AEF9-40FAE4D32FEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModel", "BusinessModel\BusinessModel.csproj", "{906333BC-BACC-48BF-BB0E-9850EB15D607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessModel", "BusinessModel\BusinessModel.csproj", "{906333BC-BACC-48BF-BB0E-9850EB15D607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTest", "TodoTest\TodoTest.csproj", "{DDF09607-6842-4151-9C9F-4BE173D26ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{906333BC-BACC-48BF-BB0E-9850EB15D607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{906333BC-BACC-48BF-BB0E-9850EB15D607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{906333BC-BACC-48BF-BB0E-9850EB15D607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF09607-6842-4151-9C9F-4BE173D26ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF09607-6842-4151-9C9F-4BE173D26ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF09607-6842-4151-9C9F-4BE173D26ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF09607-6842-4151-9C9F-4BE173D26ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
