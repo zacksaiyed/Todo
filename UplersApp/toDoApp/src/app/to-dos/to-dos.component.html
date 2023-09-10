@@ -1,0 +1,92 @@
+  <section  style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+          <h4 class="mb-0"><i class="fa fa-tasks me-2"></i>Task List</h4>
+          <div class="card">
+            <div class="card-header p-3">
+              <form class="row row-cols-lg-auto g-3 align-items-center" #todoForm="ngForm" (ngSubmit)="addTask()">
+                <div class="col-12">
+                  <label class="visually-hidden" for="inlineFormInputGroupUsername">Task</label>
+                  <div class="input-group">
+                    
+                    <input type="text" class=" form-control form-control-sm" id="inlineFormInputGroupUsername" placeholder="Task"
+                    name="title"
+                    required
+                    [(ngModel)]="addTodo.title"
+                    #nameField="ngModel"
+                    >
+                    
+                  </div>
+                </div>
+               <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-sm">Add Task</button>
+                  <button type="button" class="btn btn-default btn-sm" (click)="cancel()">Cancel</button>
+                </div>
+              </form>
+              <small *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
+                <small *ngIf="nameField.errors" class="text-danger">Task is required.</small>
+              </small>
+            </div>
+            <div class="card-body" data-mdb-perfect-scrollbar="true" >
+  
+              <table class="table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col" class="visually-hidden">Id</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="fw-normal" *ngFor="let data of todoList.todos let i = index" >
+                   
+                    <td class="align-middle visually-hidden" >
+                      <span>{{data.id}}</span>
+                    </td>
+                    <td class="align-middle">
+                     
+
+                      <ng-container *ngIf="i===editingRowIndex ; else elseBlock">
+                        <!-- Content to render when the condition is true -->
+                        <input value="{{data.title}}" type="text" class=" form-control form-control-sm" [(ngModel)]="data.title"/>
+                      </ng-container>
+                      
+                      <ng-template #elseBlock>
+                        <!-- Content to render when the condition is false -->
+                        <span  [ngClass]="{'text-decoration-line-through': data.isCompleted}">{{data.title}}</span>
+                      </ng-template>
+                      
+                    </td>
+                    
+                    <td class="align-middle">
+                      <a href="#!" [attr.aria-disabled]="data.isCompleted ? true : null" role="button"  data-bs-toggle="button" 
+                          [class.disabled]="data.isCompleted"
+                          title="Edit" (click)="editRow(i)"><i
+                          class="fa fa-pencil text-info me-3" [class.graycolor]="data.isCompleted"></i></a>
+
+                          <a href="#!" data-mdb-toggle="tooltip" title="Complete" [class.disabled]="data.isCompleted" (click)="updateTodoAsComplete(i,data)">
+                            <i class=" fa fa-solid fa-check text-success me-3" [class.graycolor]="data.isCompleted"></i></a>
+
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove" role="button" (click)="delteTodo(i,data)"><i
+                          class="fa fa-trash   text-danger"></i></a>
+
+                       <a *ngIf="i === editingRowIndex" href="#!" data-mdb-toggle="tooltip" title="Save" class="btn btn-sm btn-success ms-3" (click)="editRecord(i,data)">Save</a>
+                          
+                      
+
+
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+  
+            </div>
+           
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>

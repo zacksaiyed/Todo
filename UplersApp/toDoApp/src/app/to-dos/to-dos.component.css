@@ -1,0 +1,7 @@
+a.disabled {
+    pointer-events: none; 
+    
+  }
+i.graycolor{
+    color: gray !important;
+}
