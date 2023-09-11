@@ -51,7 +51,8 @@
 
                       <ng-container *ngIf="i===editingRowIndex ; else elseBlock">
                         <!-- Content to render when the condition is true -->
-                        <input value="{{data.title}}" type="text" class=" form-control form-control-sm" [(ngModel)]="data.title"/>
+                        <input value="{{data.title}}" type="text" class=" form-control form-control-sm" [(ngModel)]="data.title"
+                         id="rowId"/>
                       </ng-container>
                       
                       <ng-template #elseBlock>
@@ -68,12 +69,12 @@
                           class="fa fa-pencil text-info me-3" [class.graycolor]="data.isCompleted"></i></a>
 
                           <a href="#!" data-mdb-toggle="tooltip" title="Complete" [class.disabled]="data.isCompleted" (click)="updateTodoAsComplete(i,data)">
-                            <i class=" fa fa-solid fa-check text-success me-3" [class.graycolor]="data.isCompleted"></i></a>
+                            <i class=" fa fa-solid fa-check text-success me-3" [class.graycolor]="data.isCompleted" role="button"  data-bs-toggle="button" ></i></a>
 
                       <a href="#!" data-mdb-toggle="tooltip" title="Remove" role="button" (click)="delteTodo(i,data)"><i
-                          class="fa fa-trash   text-danger"></i></a>
+                          class="fa fa-trash   text-danger" role="button"  data-bs-toggle="button" ></i></a>
 
-                       <a *ngIf="i === editingRowIndex" href="#!" data-mdb-toggle="tooltip" title="Save" class="btn btn-sm btn-success ms-3" (click)="editRecord(i,data)">Save</a>
+                       <a *ngIf="i === editingRowIndex" href="#!" data-mdb-toggle="tooltip" title="Save" class="btn btn-sm btn-success ms-3" (click)="editRecord(i,data)" role="button"  data-bs-toggle="button" >Save</a>
                           
                       
 

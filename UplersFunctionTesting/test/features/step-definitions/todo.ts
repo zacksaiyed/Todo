@@ -16,5 +16,11 @@ When("Todo List is Loaded",async function() {
 Then("Create a new Task", async function() {
     
     var isRecordAdded= await todoPage.addNewTask(helper.generateRandomString(5)); 
-    chai.expect(await isRecordAdded).to.equal(true);
+    chai.expect(await isRecordAdded.recordExits).to.equal(true);
+})
+
+Then("Edit a existing Task", async function() {
+    
+    var isRecordUpdated= await todoPage.editTask(helper.generateRandomString(5),1); 
+    chai.expect(isRecordUpdated.recordExits).to.equal(true);
 })
