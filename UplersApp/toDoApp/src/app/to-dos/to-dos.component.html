@@ -15,12 +15,14 @@
                     required
                     [(ngModel)]="addTodo.title"
                     #nameField="ngModel"
+                    id="todoInput"
+                    required
                     >
                     
                   </div>
                 </div>
                <div class="col-12">
-                  <button type="submit" class="btn btn-primary btn-sm">Add Task</button>
+                  <button type="submit" class="btn btn-primary btn-sm" id="todoButton">Add Task</button>
                   <button type="button" class="btn btn-default btn-sm" (click)="cancel()">Cancel</button>
                 </div>
               </form>
@@ -30,7 +32,7 @@
             </div>
             <div class="card-body" data-mdb-perfect-scrollbar="true" >
   
-              <table class="table mb-0">
+              <table class="table mb-0" id="todoList">
                 <thead>
                   <tr>
                     <th scope="col" class="visually-hidden">Id</th>
