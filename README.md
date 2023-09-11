@@ -8,13 +8,6 @@ UI: Change the API localhost URL if required. In environmentdevelopment.ts file
 Functional Test: Change the UI local host URL in todo.feature file.
 <img width="744" alt="image" src="https://github.com/zacksaiyed/Todo/assets/59198949/ae16160e-2442-4823-83ad-6f999ca21b56">
 
-SQL Server: zaid-azure.database.windows.net
-Authentication: SQL Authentication
-Login: uplers
-Password: Developmentuser@2023
-
-I have added IP 49.15.234.144 to the Azure firewall. So you will be able to access Azure Db.
-
 Note: Clone the repo and you can run the projects on your local machine.
 
 The following three Desing patterns have been used :
