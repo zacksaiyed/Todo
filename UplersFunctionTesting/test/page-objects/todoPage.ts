@@ -39,18 +39,41 @@ async editTask(inputValue:string, index:number){
   return await this.filterList(inputValue);
 
 }
-async filterList(textValue: string) {
+
+async deleteTask(index:number){
+  
+  let inputValue = await this.getvalueForElement(await $(`//table[@id="todoList"]//tbody//tr[${index}]//td[2]//span`))
+  await this.clickElement(await $(`//table[@id="todoList"]//tbody//tr[${index}]//td[3]//a[@title="Remove"]`));
+  await browser.pause(3000);
+  return await this.filterList(inputValue);
+
+}
+
+async markTaskCompleted(index:number){
+  
+
+  await this.clickElement(await $(`//table[@id="todoList"]//tbody//tr[${index}]//td[3]//a[@title="Complete"]`));
+  await browser.pause(3000);
+  return await this.elementExists(await $(`//table[@id="todoList"]//tbody//tr[${index}]//td[2]//span[@class="text-decoration-line-through ng-star-inserted"]`))
+
+}
+
+
+
+async filterList(textValue: string|undefined) {
     
+  if(textValue===undefined) return {recordExits : false , recordValue:textValue};
+
   let rowCount =await $$(`//table[@id="todoList"]//tbody//tr`).length;
 
   for (let i = 0; i < await rowCount; i++) {
-    
+
     var cellValue = await $(`//table[@id="todoList"]//tbody//tr[${i+1}]//td[2]`).getText();
     if (cellValue === textValue) {
       return {recordExits : true , recordValue:textValue};
     }
   }
-  return  {recordExits : false , recordValue:textValue};;
+  return  {recordExits : false , recordValue:textValue};
 }
 
 

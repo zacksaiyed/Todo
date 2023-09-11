@@ -19,6 +19,19 @@ export default class Page {
       await ele.setValue(text);
     }
   }
+
+  async getvalueForElement(ele: WebdriverIO.Element) {
+    await ele.waitForDisplayed({ timeout: 5000 });
+    if (ele) {
+      return await ele.getText();
+    }
+  }
+  async elementExists(ele: WebdriverIO.Element) {
+    var isExists =await ele.isDisplayed();
+    return isExists;
+   
+  }
+  
   
   
 }

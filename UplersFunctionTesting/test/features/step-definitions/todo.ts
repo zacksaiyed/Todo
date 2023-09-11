@@ -19,8 +19,20 @@ Then("Create a new Task", async function() {
     chai.expect(await isRecordAdded.recordExits).to.equal(true);
 })
 
-Then("Edit a existing Task", async function() {
+Then("Edit a existing Task {string}", async function(index:string) {
     
-    var isRecordUpdated= await todoPage.editTask(helper.generateRandomString(5),1); 
+    var isRecordUpdated= await todoPage.editTask(helper.generateRandomString(5),parseInt(index)); 
     chai.expect(isRecordUpdated.recordExits).to.equal(true);
+})
+
+Then("Mark Task as Completed {string}", async function(index:string) {
+    
+    var isRecordUpdated= await todoPage.markTaskCompleted(parseInt(index)); 
+    chai.expect(isRecordUpdated).to.equal(true);
+})
+
+Then("Delete a existing Task {string}", async function(index:string) {
+    
+    var isRecordUpdated= await todoPage.deleteTask(parseInt(index)); 
+    chai.expect(isRecordUpdated.recordExits).to.equal(false);
 })
