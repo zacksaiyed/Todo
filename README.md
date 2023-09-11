@@ -8,6 +8,11 @@ UI: Change the API localhost URL if required. In environmentdevelopment.ts file
 Functional Test: Change the UI local host URL in todo.feature file.
 <img width="744" alt="image" src="https://github.com/zacksaiyed/Todo/assets/59198949/ae16160e-2442-4823-83ad-6f999ca21b56">
 
+For Angular and Functional Test in Cucumber make sure npm i is executed first.
+
+To run the angular application run the command ng serve
+To run the cucumber functional test run the command npx wdio wdio.conf.ts
+
 Note: Clone the repo and you can run the projects on your local machine.
 
 The following three Desing patterns have been used :
