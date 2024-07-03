@@ -20,7 +20,7 @@ namespace BusinessData.Services
         {
             _context = context;
         }
-        bool ITodoRepository.AddUpdateTodo(AddUpdateToDoRequest request)
+        public bool AddUpdateTodo(AddUpdateToDoRequest request)
         {
             var id = new SqlParameter("@Id", request.Id);
             var title = new SqlParameter("@Title", request.Title ?? (object)DBNull.Value);
@@ -31,7 +31,7 @@ namespace BusinessData.Services
             return value > 0;
         }
 
-        bool ITodoRepository.DeleteTodo(AddUpdateToDoRequest request)
+        public bool DeleteTodo(AddUpdateToDoRequest request)
         {
             var id = new SqlParameter("@Id", request.Id);
             int value = _context.Database.ExecuteSqlRaw("EXEC USP_DeleteTodo @Id", id);
@@ -39,7 +39,7 @@ namespace BusinessData.Services
 
         }
 
-        bool ITodoRepository.UpdateTodoAsCompleted(AddUpdateToDoRequest request)
+        public bool UpdateTodoAsCompleted(AddUpdateToDoRequest request)
         {
             var id = new SqlParameter("@Id", request.Id);
             int value = _context.Database.ExecuteSqlRaw("EXEC USP_UpdateTodoAsCompleted @Id", id);
